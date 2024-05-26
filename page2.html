@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+     <meta charset="utf-8">
+     <title>Портфолио работ</title>
+     <style type="text/css">
+          body {
+              background: top no-repeat url(fon.jpg), 
+                         bottom no-repeat url(fon2.jpg);
+              background-size: 100%;
+              background-color: black;
+              padding-top: 0.5cm;
+              padding-bottom: 0.5cm;
+              overflow-y:scroll;
+          }
+
+          .imaglog {
+               background-color: black;
+               border-radius: 100%;
+               border: 5px solid rgb(255, 255, 255); /* Параметры рамки */
+               box-shadow: 0px 0px 20px rgb(195, 195, 195); /* Параметры тени */
+               margin-bottom: 0.5cm;
+               margin-left: 0.5cm;
+               transition: 0.7s;
+          }
+          .imaglog:hover  {
+               background-color: rgb(17, 17, 17);
+               border-radius: 100%;
+               border: 7px solid rgb(255, 255, 255); /* Параметры рамки */
+               box-shadow: 0px 0px 30px rgb(195, 195, 195), inset 0px 0px 17px rgb(195, 195, 195); /* Параметры тени */
+               margin-bottom: 1cm;
+               margin-left: 0.6cm;
+               transition: 0.7s;
+          }
+
+          ul.menu{
+               list-style:none; /* Убираем маркер списка */
+               margin-top: 2cm;
+               width:8em; /* Ширина блока */
+               padding:0 0 0 0; /* Отступы внутри блока */
+               font-size: 14pt;
+          }
+
+          li.submenu{
+               text-align: center;
+               width:90%; /* Ширина пункта */
+               margin:0.3em 1em 0.3em 0; /* задаём значение полей вокруг пункта */
+               padding:0.5em; /* Задаём отступы внутри пункта */
+               background: rgb(17, 17, 17); /* Цвет фона */
+               border-radius: 15px;
+               transition: 0.5s;
+          }
+
+          li a{
+               text-decoration:none; /* Убираем нижнее подчеркивание у ссылок */
+               color: wheat; /* Цвет текста ссылки */
+               transition: 0.5s;
+          }
+
+          /*стиль элемента списка и ссылки при наведении на него курсора мыши*/
+          li:hover,li:hover a, .submenu:hover {
+               transition: 0.7s;
+               background:wheat; /* Фон пункта меню при выделении */
+               color: rgb(255, 255, 255); /* Цвет ссылки */
+               cursor:pointer; /* Устанавливаем вид курсора при выделении пункта меню */
+               font-size: 15pt;
+               box-shadow: 0px 0px 25px rgb(195, 195, 195);
+          }
+
+          .tablicha1 {
+               background:top no-repeat url(https://damion.club/uploads/posts/2022-01/thumbs/1642460785_15-damion-club-p-belie-foni-s-chernimi-kotami-15.jpg);
+               background-size: 70%;
+               background-color: black;
+          }
+
+          .tablicha2 {
+               background: linear-gradient(#2c2c2c, 10%, #020202, 90%, #2c2c2c);
+          }
+
+          .tableichar3 {
+              background: top no-repeat url(https://pw.artfile.me/wallpaper/02-08-2017/650x367/zhivotnye-koty-chernyj-fon-1203552.jpg);
+              background-size: 26%;
+              background-color: black;
+          }
+
+          .InpBotton {
+            border-radius: 15px;
+              width: 50px;
+              height: 50px;
+              margin-left: 0.5cm;
+              margin-right: 0.5cm;
+              margin-bottom: 1cm;
+              color: wheat;
+              background-color: #020202;
+              border-color: wheat;
+              transition: 0.5s;
+          }
+          .InpBotton:hover {
+            border-radius: 15px;
+              width: 55px;
+              height: 55px;
+              margin-left: 0.5cm;
+              margin-right: 0.5cm;
+              color: wheat;
+              background-color: #020202;
+              border-color: wheat;
+              transition: 0.5s;
+              box-shadow: 0 0 25px rgb(195, 195, 195);
+          }
+
+          .images {
+              border: 5px ridge rgba(245, 222, 179, 0.753);
+              border-radius: 10px;
+              box-shadow: 0 0 10px rgb(195, 195, 195);
+          }
+
+     </style>
+</head>
+<body onload="digitalWatch()">
+<table border="0" align="center" rules="rows" style="width: 70%;">
+     <tr>
+          <td>
+            <table border="1" class="tablicha1" cellpadding="10" style="border: wheat dashed 5px; width:90%; border-top-left-radius: 80px; border-top-right-radius: 80px;">
+                <tr>
+                    <td style="border: 0; border-top-left-radius: 80px;"> 
+                            <img class="imaglog" src='logo_png.png' width='330' height='320'>
+                    </td>
+                    <th style="border: 0; border-top-right-radius: 80px;">
+                            <h1 style='margin-bottom: -25px; color: wheat;'>Портфолио практических работ <br> Корнюхина Никиты Евгеньевича</h1>
+                            <br>
+                            <div style="color: wheat;">
+                                <h4>представлены работы <br> с использованием основ языка веб-программирования <br> JavaScript</h4>
+                                <h3>
+                                    <p align='right' style="margin-top: 1cm; margin-right: 2cm;">
+                                        Текущая дата:
+                                        <p align='right' id="times" style="color: rgb(255, 255, 255); font-weight: bold; margin-right: 3cm;"></p>
+                                    </p>
+                                    <p align='right' style="margin-top: 1cm; margin-right: 2cm;">
+                                    Текущее время:
+                                        <p align='right' id="digital_watch" style="color: rgb(255, 255, 255); font-size: 100%; font-weight: bold; margin-right: 3cm;"></p>
+                                    </p>
+                                </h3>
+                            </div> 
+                    </th>
+                </tr>
+
+                <!-- дата -->
+                <script>
+                    var d = new Date();
+                    var m = d.getMonth();
+                    var ms = ['Января','Февраля','Марта','Апреля','Мая','Июня','Июля','Августа','Сентября','Октября','Ноября','Декабря'];
+                    
+                    document.getElementById('times').innerHTML = d.getDate() + ' ' + ms[m] + ' ' + d.getFullYear();
+                </script>
+                <!-- часы -->
+                <script>
+                    function digitalWatch(){
+                            var data = new Date(); // получаем текущий момент времени
+                            var hours = data.getHours(); //получаем часы
+                            var minutes = data.getMinutes(); // получаем минуты 
+                            var seconds = data.getSeconds(); // получаме секунды 
+
+                            if (hours < 10) hours = '0' + hours; 
+                            if (minutes < 10) minutes = '0' + minutes;
+                            if (seconds < 10) seconds = '0' + seconds;
+                            document.getElementById('digital_watch').innerHTML = hours + ':' + minutes + ':' + seconds;
+                            setTimeout('digitalWatch()', 1000);
+                        }
+                </script>
+            </table>
+
+            <table class="tablicha2" border="1" cellpadding="10" style="border: wheat dashed 5px; width:90%; color: wheat;">
+                <tr>
+                    <td valign='top' align="center" style="border-top: 0; border-left: 0; border-bottom: 0;">
+                            <nav>
+                                <ul class='menu'>
+                                    <li class='submenu'><a href="index.html">Главная</a></li>
+                                    <li class='submenu'><a href="page2.html">Фотогалерея</a></li>
+                                    <li class='submenu'><a href="page3.html">Итоговый тест</a></li>
+                                </ul>
+                            </nav>
+                    </td>
+                    
+                    <td align="center" style="width:80%; border-top: 0; border-right: 0; border-bottom: 0;">
+                            <hr color="wheat">
+                        <h2 class="underline-one" align='center' style="color: wheat;">Простейшая галерея изображений</h2>
+                        <br>
+                        <script>
+                            //массив с изображениями
+                            var array = new Array(
+                                "1.jpg",
+                                "2.jpg",
+                                "4.jpg",
+                                "3.jpg",
+                                "5.jpg"
+                            );
+                    
+                            var i = 0;
+                            //функция для смены изображений влево
+                            function left() {
+                                var image = document.getElementById("rotatorbutton");
+                                i--;
+                                if (i < 0) i = array.length - 1;
+                                image.src = array[i];
+                            }
+                    
+                            //функция для смены изображений вправо
+                            function right() {
+                                var image = document.getElementById("rotatorbutton");
+                                i++;
+                                if (i == array.length) i =0;
+                                image.src = array[i];
+                            }
+                        </script>
+
+                            <input class="InpBotton" type="button" name="left" value="ᐊ" onclick="left()">
+                           
+                            <script>
+                                document.write("<img id = 'rotatorbutton' src = '" + array[0] + "' class='images' width = '450' height = '590' />");
+                            </script>
+                            
+                            <input class="InpBotton" type="button" name="right" value="ᐅ" onclick="right()">
+
+                        <br>
+                        <hr color='wheat'>
+                    </td>
+                </tr>
+            </table>
+
+            <table border="1" class="tableichar3" height="100" cellpadding="10" style="border: wheat dashed 5px; font-size: 25px; color: wheat; width:90%; border-bottom-left-radius: 80px; border-bottom-right-radius: 80px;">
+                <tr>
+                    <th style="border-bottom-right-radius: 80px; border-bottom-left-radius: 80px; border: 0;">
+                            <h6>	&#169; Корнюхин Никита, 2022 <br> студент 3 курса специальности 44.02.06. Профессиональное обучение (по отраслям) <br> - по отрасли информатика и вычислительная техника </h6>
+                    </th>
+                </tr>
+            </table>
+          </td>
+     </tr>
+</table>
+</body>
+</html>
