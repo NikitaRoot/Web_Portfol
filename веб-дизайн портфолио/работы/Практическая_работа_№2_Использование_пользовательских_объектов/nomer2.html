@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Студенты 3 курса группы Г</h1>
+
+    <script>
+        Student3G = new Object();
+        for (var i=0; i<3; i++) {
+        Student3G.famil = prompt("Введите фамилию: ","");
+        Student3G.name = prompt("Введите имя: ","");
+        Student3G.dischip = prompt("Введите дисциплину: ","");
+        Student3G.otmetka = prompt("Введите отметку: ","");
+        
+        document.write("<b>Фамилия: </b>" + Student3G.famil + "<br>");
+        document.write("<b>Имя: </b>" + Student3G.name + "<br>");
+        document.write("<b>Дисциплина: </b>" + Student3G.dischip + "<br>");
+        document.write("<b>Отметка: </b>" + Student3G.otmetka + "<br>");
+        document.write("<i>" +Student3G.famil +"</i>" + " ", "<i>", Student3G.name  +"</i>", + " по дисциплине " , + "<i>", Student3G.dischip  +"</i>" + "имеют отметку" , + "<i>", Student3G.otmetka + "<i>", + "<br>");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Список элементов массива: <b id="spisok"></b><br>
+    Длинна массива: <b id="dlin"></b><br>
+    <b id="chisl"></b> элемент имеет значение <b id="ell"></b><br>
+    <script>
+        var a = prompt("Введите кол-во элементов массива: ","");
+        var n = new Array();
+        for(var i=0; i<a; i++){
+            var c=prompt("Введите числа: ","");
+            n[i]=c;
+        }
+        document.getElementById('spisok').innerHTML=n;
+        document.getElementById('dlin').innerHTML=a;
+        var j=prompt("Какой элемент массива будем выводить?","");
+        document.getElementById('chisl').innerHTML=j;
+        document.getElementById('ell').innerHTML=n[j-1];
+        </script> 
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест</title>
+    <style>
+        body {
+            background: linear-gradient(#1d52ff, 35px, #b1bed1);
+            color: rgb(32, 32, 32);
+            padding-left: 1cm;
+        }
+
+        h2 {
+            text-align: center;
+            color: rgb(34, 34, 34);
+            border: 4px solid rgba(0, 0, 0, 0.692);
+            border-radius: 25px;
+            margin-left: 10cm;
+            margin-right: 10cm;
+            background-color: #1d52ff;
+        }
+
+        .fio {
+            border-top: 0;
+            border-left: 0;
+            border-right: 0;
+            background-color: rgba(255, 255, 255, 0.397);
+        }
+
+        .inputBotton {
+            background-color: rgb(59, 59, 236);
+            border-radius: 25px;
+            border: #1d52ff solid 4px;
+            color: white;
+            size: 20px;
+            transition: 0.5s;
+            cursor: pointer;
+        }
+        .inputBotton:hover {
+            background-color: rgb(59, 59, 236);
+            border-radius: 25px;
+            border: #1d52ff solid 4px;
+            color: white;
+            size: 25px;
+            box-shadow: 0 0 20px rgb(0, 0, 0);
+            transition: 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <script> /* функция для подсчета правильных ответов и вывода результата во всплывающее окно alert*/ 
+    function Ok() { /*обращение к содержимомутекстовых полей для заполнения данными: фамилия, имя, группа: */ 
+        var Elem="Фамилия: " + document.f.Family.value + "\nИмя: " + document.f.Name.value + "\nГруппа: " + document.f.Group.value; 
+        /*массив, хранящий варианты ответов. Ссылка на них по имени формы fu идентификаторам id элементов формы - переключателей или флажков: */ 
+        var A = new Array(document.f.t1, document.f.t2, document.f.t3, document.f.t4, document.f.s1, document.f.s2, document.f.s3, document.f.s4, document.f.t5, document.f.t6);
+        //переменная, предназначенная для хранения количества правильных ответов: 
+        var Res = 0; 
+        /*в цикле перечислений проверяется условие, если выбран конкретный ответ (т.е. элемент массива А), то переменная для хранения результата прибавляет значение 1 или 0, в зависимости от правильности выбранного ответа. Учитывается значение атрибута value: */ 
+        for (i in A){ 
+            if(A[i].checked) Res = Res + parseInt(A[i].value);
+        } 
+         /* операторвыбора проверяет каждое значение переменной, хранящей количество правильных ответов, и в зависимости от него выводит в окно alert данные об испытуемом и его отметку: */ 
+        switch (Res){ 
+            case 3: alert(Elem + "\nВаша отметка - отлично"); 
+            break; 
+            case 2: alert(Elem + "\nВаша отметка - хорошо");
+            break; 
+            case 1: alert(Elem + "\nВаша отметка - удовлетворительно"); 
+            break; 
+            case 0: alert(Elem + "\nВаша отметка - неудовлетворительно"); 
+        }
+    }
+    </script> 
+    
+    <!--создана форма с именем f--> 
+    <form name="f">
+        <h2> Введите свои данные: </h2> 
+        <TABLE> <!-- В ячейках таблицы созданы 3 текстовых поля для ввода данных. Строка onBlur "this.value this.value.charAt(0).toUpperCase()+ this.value.slice(l) означаеm приnоmepе фокуса на текущем объекте this введенное значение value изменяется на следующее: первая буква введенного слова становится заглавной: -->
+            <TR>
+                <TD><B>Фамилия:<B></TD> 
+                <TD><INPUT class="fio" type='text' NAME="Family" SIZE='20' onBlur="this.value=this.value.charAt(0).toUpperCase() + this.value.slice(1)"></TD>
+            </TR> 
+            <TR>
+                <TD><B>Имя:</B></TD> 
+                <TD><INPUT class="fio" type='text' NAME="Name" SIZE='20' onBlur="this.value=this.value.charAt(0).toUpperCase() + this.value.slice(1)"></TD>
+            </TR>
+            <TR>
+                <TD><B>Группа:</B></TD>
+                <TD>
+                    <select name="Group" SIZE='1'> 
+                        <OPTION VALUE="1a">la</option> 
+                        <OPTION VALUE ="16">16</option> 
+                        <OPTION VALUE ="1в">1в</option>
+                        <OPTION VALUE ="1r">1r</option> 
+                        <OPTION VALUE="2a">2a</option> 
+                        <OPTION VALUE ="26">26</option> 
+                        <OPTION VALUE ="2r">2r</option> 
+                        <OPTION VALUE ="2ж">2ж</option> 
+                        <OPTION VALUE ="2ю">2ю</option> 
+                        <OPTION VALUE="3a">3a</option> 
+                        <OPTION VALUE ="36">36</option> 
+                        <OPTION VALUE ="3r">3r</option> 
+                        <OPTION VALUE="4a">4a</option> 
+                        <OPTION VALUE ="46">46</option> 
+                        <OPTION VALUE ="4r">4r</option> 
+                        <OPTION VALUE ="4ж">4ж</option> 
+                        <OPTION VALUE="5r">5r</option>
+                        <OPTION VALUE ="5ж">5ж</option> 
+                    </SELECT> 
+                </TD>
+            </TR> 
+        </TABLE> 
+        <p align="center"> 
+            <font size="5"><b>Тест</b></font>
+        </p> 
+        <font size="4">1.<b> Какой метод реализует объединение всех элементов массива в одну строку? </b>
+        <font size="3"> <br>
+                <!--созданы переключатели с разными именами пате для того, чтобы ссылаться на них в массиве, хранящем варианты ответов. Атрибут value хранит - если ответ правильный, 0 - если ответ неправильный: --> 
+            <input type="radio" name="a1" id="t1" value="0"> reverse() <br>
+            <input type="radio" name="a1" id="t2" value="0"> sort() <br>
+            <input type="radio" name="a1" id="t3" value="1"> join() <br>
+            <input type="radio" name="a1" id="t4" value="0"> concat() <br>
+
+        <font size="4"> 2.<b> Какие методы позволяют организовать ввод информации? </b> <br>
+        <font size="3"> 
+            <!--созданы флажки с разными именами для того, чтобы ссылаться на них в массиве, хранящем варианты ответов. Атрибут value хранит 1 - если ответ правильный, 0 - если ответ неправильный: --> 
+            <input type="checkbox" name='a2' id="s1" value="0"> alert <br>
+            <input type="checkbox" name='a2' id="s2" value="0"> window.open <br>
+            <input type="checkbox" name='a2' id="s3" value="1"> prompt <br>
+            <input type="checkbox" name='a2' id="s4" value="0"> document.write
+            <br> <br>
+        
+        <font size="4"> 3. <i> Напишите полным ответом. </i> <b> Представление документа в виде дерева тегов, доступное для изменения через JavaScript - это…</b> <br>
+        <font size="3"> 
+            <input type="radio" name='a3' id="t5" value="1"> объектная модель документа <br>
+            <input type="radio" name='a3' id="t6" value="0"> объектная модель браузера <br>
+            <br> <br>
+        <p align="center"> <!--кнопка для запуска результатутестирования, по нажатию запускается функция для подсчета правильных ответов и вывода результата во всплывающее окно alert--> 
+            <input class="inputBotton" onclick='Ok();' type="button" value="Результат тестирования"> 
+            <input class="inputBotton" type="reset" name="reset" value="Сброс"> 
+        </p>
+    </form>
+</body>
+</html>

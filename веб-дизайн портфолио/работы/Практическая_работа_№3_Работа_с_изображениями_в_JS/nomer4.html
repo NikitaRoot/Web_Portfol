@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Повторение с помощью функции setTimeout</title>
+
+    <!-- Необходимо написать сценарий, в результате выполнения которого несколько заданных изображений послдовательно появляются в документе через разные промежутки времени (2 секунды). При нажатии на кнопку ОСТАНОВИТЬ чередование изображений прекращается. Возобновить просмотр рисунков можно, если нажать кнопку НАЧАТЬ СНОВА -->
+
+    <script>
+        //переменная k отвечает за номер изображения, присвоена 1
+        var k = 1;
+        //функция остановки смены изображения
+        function ref() {
+            k = 6;
+        }
+        //функция для смены изображения
+        function succpict() {
+            var d = document;
+            if (k <= 5) {
+                if (k == 1) {d.mypict.src = "1.jpg"; k++; }
+                else if(k == 2) {d.mypict.src = "2.jpg"; k++; }
+                else if(k == 3) {d.mypict.src = "3.jpg"; k++; }
+                else if(k == 4) {d.mypict.src = "4.jpg"; k++; }
+                else if(k == 5) {d.mypict.src = "5.jpg"; k++; }
+
+                //смена изображений через 2 секунды
+                setTimeout("succpict()", 3000);
+            }
+        }
+    </script>
+
+</head>
+    <!-- при загрузке веб-страницы запускается функция вывода изображений -->
+<body onload="succpict()">
+    <p>Просмотр рисунков</p>
+    <img src="1.jpg" name='mypict' width="500" >
+    <form>
+        <!-- Кнопка остановки смены изображений -->
+        <input type="reset" value="Остановить" onclick="ref();">
+        <!-- кнопка НАЧАТЬ показ изображений снова -->
+        <input type="button" value="Начать снова" onclick="k=1; succpict();">
+    </form>
+</body>
+</html>

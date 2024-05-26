@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Исходный массив: <b id="mas1"></b><br>
+    Массив с добавленными предметами: <b id="mas2"></b><br>
+    Отсортированные предметы: <b id="mas3"></b><br>
+    Все предметы кроме тех что мы не изучаем: <b id="mas4"></b><br>
+    Замена запятой на вертикальную линию: <b id="mas5"></b><br>
+    Первый элемент массива: <b id="mas6_1"></b><br>
+    Последний элемент массива: <b id="mas6_2"></b><br>
+    Длинна полученого массива: <b id="mas7"></b><br>
+    <script>
+        var b=['веб-дизайн','математика','программирование','русский язык','литература','химия']; //исходный массив
+            document.getElementById('mas1').innerHTML=b;
+
+
+        var v =b.sort(); //отсортированные предметы
+            document.getElementById('mas3').innerHTML=v;
+
+        var o = b.length; //длинна массива
+            document.getElementById('mas7').innerHTML=o;
+
+        var del = b; //удалить предметы которые мы не изучаем в этом году
+        var del2 = del.slice(0,3);
+            document.getElementById('mas4').innerHTML=del2;
+
+        var p = b.join('|'); //замена запятой на вертикальную линию
+            document.getElementById('mas5').innerHTML=p;
+
+        var y = b.shift(); //первый элемент массива 
+            document.getElementById('mas6_1').innerHTML=y;
+
+        var u = b.pop(); //последний элемент массива 
+            document.getElementById('mas6_2').innerHTML=u; 
+
+    </script>
+</body>
+</html>

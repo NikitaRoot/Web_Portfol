@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script>
+        //функция добавления строк в таблицу 
+        function add() {
+            var nodet = document.createElement('tr'); //создать новый элемент Строка
+            var node = document.createElement('td'); //создать новый эелемент Ячейка 1
+            var node1 = document.createElement('td'); //создать новый эелемент Ячейка 2
+
+            node.innerHTML = "<input type='text' name='1'>"; //в первой ячейке хранится текстовое поле 
+            node1.innerHTML = "<input type='text' name='2'>"; //во второй ячейке хранится текстовое поле
+
+            //найти эелемн Таблица по идентефикатору, добавить элеинет Строка в иерархическую структуру таблицы
+            document.getElementById('tabl').appendChild(nodet);
+
+            nodet.appendChild(node); //довить элемент Ячейка 1 в строку
+            nodet.appendChild(node1); //добавить ячейку 2 в строку
+        }
+    </script>
+</head>
+<body>
+    <!-- создать таблицу с одной строкой и двумя ячейками в ней  -->
+    <table id="tabl" border="1" align="left">
+        <tr>
+            <!-- в чейке содержится текстовое поле, предназначеное для ввода текста с клавиатуры -->
+            <td><input type="text" name="1"></td>
+            <td><input type="text" name="2"></td>
+        </tr>
+    </table>
+    <!-- кнопка добавить строки -->
+    <input type="button" value="Добавть строки" onclick="add();">
+</body>
+</html>
