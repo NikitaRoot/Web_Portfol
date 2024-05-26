@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigator</title>
+</head>
+<body>
+    <script>
+        var newElem = document.createElement('table'); //создание элемента таблици 
+        newElem.setAttribute('width','50%'); //ширина таблици 50% от ширины окна браузера 
+        newElem.border = 1; //толщина рамки 1 px 
+
+        //создание первой строки, нумерация начинается с 0
+        var newRowl = newElem.insertRow(0);
+        //создание первой ячейки в первой строке, нумерация с 0
+        var newCell1 = newRowl.insertCell(0);
+        //ширина ячейки 200px 
+        newCell1.width='200';
+
+        newCell1.align = 'center';
+
+        //добавление текста в спервую ячейку первой строки 
+        newCell1.innerHTML="строка 1 ячейка 1";
+        //создание второй ячейки в первой строке 
+        var newCell2 = newRowl.insertCell(1);
+        //ширина ячейки 200 px
+        newCell2.width = '200';
+
+        newCell2.align = 'center';
+
+        //добавление текста во вторую ячейку первой строки 
+        newCell2.innerHTML="строка 1 ячейка 2";
+        //создание второй строки 
+        var newRow2 = newElem.insertRow(1);
+        //создание первой ячейки во второй строке 
+        var newCell3 = newRow2.insertCell(0);
+        //задание атрибута для объединения двух ячеек по гороизонтали 
+        newCell3.setAttribute('colSpan','2');
+        //выравниевание содержимого ячейки по центру 
+        newCell3.align = 'center';
+        //добавление текста в ячейку
+        newCell3.innerHTML="строка 2 ячейка 1";
+        //добавление таблици в иерархическую структуру документа 
+        document.body.appendChild(newElem);
+
+    </script>
+</body>
+</html>

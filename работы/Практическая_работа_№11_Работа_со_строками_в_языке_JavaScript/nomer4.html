@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Исходная фраза: <b id="ish"></b><br>
+    Измененная фраза: <b id="izm"></b><br>
+    <script>
+        var a="Сейчас идёт урок программирование!"
+        var b = a.replace("программирование","Веб-дизайн");
+        document.getElementById('ish').innerHTML=a;
+        document.getElementById('izm').innerHTML=b;
+    </script>
+</body>
+</html>

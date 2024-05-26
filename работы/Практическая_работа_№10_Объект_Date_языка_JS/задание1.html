@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- Получить номер и название текущего дня недели, вывести их на экран -->
+<body>
+    <script>
+        var d = new Date();//текущий момент времени
+        var td = d.getDay();//получаем номер дня недели
+        var days = ['вс','пн','вт','ср','чт','пт','сб']; //массив дней недели
+        document.write('Номер дня недели: ', td, ', ' ,' название дня недели: ', days[td]);
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Смена изображений</title>
+
+    <!-- Сменить изображение по щелчку на кнопку -->
+
+</head>
+<body>
+    <!-- Кнопка Сменить изображение -->
+    <button onclick="changeImage()">Сменить изображение</button>
+    <br>
+    <!-- Загруженое первое изображение по умолчанию -->
+    <img src="n1.jpg" name="img">
+
+    <script>
+        //переменная a хранит номер первого изображения, её номер 0
+        var a = 0;
+        //создаем функцию для смены изображения
+        function changeImage() {
+            //если номер изображения равен 0, то загружаем первую картинку
+            if (a==0) {
+                document.img.src = 'n1.jpg';
+                //пересохраняме a на второе изображение под номером 1
+                a = 1;
+            }
+
+            //от себя :>
+            else if (a==1) {
+                document.img.src = 'n2.jpg'
+                a = 2;
+            }
+
+            //если номер изображения равен 1, то загружаем вторую картинку
+            else {
+                document.img.src = 'n3.jpg';
+                //пересохраняме a на первое изображение под номером 0
+                a = 0;
+            }
+        }
+    </script>
+</body>
+</html>

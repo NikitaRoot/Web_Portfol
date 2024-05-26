@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var i=1;
+        var k=0;
+        var s=0;
+        document.write("Системой зарегестрированны пользователи: " ,"<br>");
+        while(i<=5){
+            var p=prompt("Введите имя: ","");
+            if(p==""){
+                alert("ВЫ НЕ ВВЕЛИ ДАННЫЕ!");
+                s=s+1;
+                i++;
+            }
+            else {
+                alert("Вы зарегестрировались",+p);
+                k=k+1;
+                i++;
+            }
+        }
+        document.write("Зарегестрированно польлзователей ", k, "<br>");
+        document.write("Не зарегестрированно польлзователей ", s, "<br>");
+    </script>
+</body>
+</html>

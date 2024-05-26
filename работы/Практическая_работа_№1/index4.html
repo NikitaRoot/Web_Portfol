@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практическая работа №1</title>
+</head>
+<body>
+    <h1>Практическая работа №1</h1>
+    <h2>Задание 4</h2>
+    <h2>Прямоугольный треугольник</h2>
+    <i>Катет 1: <b id="kat1"></b></i><br>
+    <i>Катет 2: <b id="kat2"></b></i><br>
+    <br>
+    <i>Гипотенуза: <b id="gip"></b></i><br>
+    <i>Площадь: <b id="squar"></b></i><br>
+    <script>
+        var a=prompt('Введите катет 1: ', "");//5
+        var b=prompt('Введите катет 2: ', "");//7  
+            c=a*a+b*b;//c=25+49
+            s=1/2*a*b;//формула площади прям треугольника S=1/2*a*b
+            document.getElementById('kat1').innerHTML=a;
+            document.getElementById('kat2').innerHTML=b;
+            document.getElementById('gip').innerHTML=Math.sqrt(c);
+            document.getElementById('squar').innerHTML=s;
+    </script>
+</body>
+</html>

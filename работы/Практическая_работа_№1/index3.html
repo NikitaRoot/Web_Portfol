@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практическая работа №1</title>
+</head>
+<body>
+    <h1>Практическая работа №1</h1>
+    <h2>Задание 3</h2>
+    <i>Здравствуйте,</i><br> 
+    <b id="nam1"></b>
+    <b id="nam2"></b>
+    <b id="nam3"></b><br>
+    <i>Ваша группа:</i> <b id="grup"></b>
+    <script>
+        var a=prompt(' Введите вашу Фамилия: ', '');
+        var b=prompt('Введите ваше Имя: ', '');
+        var c=prompt('Введите ваше Отчество: ', '');
+        var d=prompt('Введите вашу группу: ', '');
+        document.getElementById('nam1').innerHTML=a;
+        document.getElementById('nam2').innerHTML=b;
+        document.getElementById('nam3').innerHTML=c;
+        document.getElementById('grup').innerHTML=d;
+    </script>
+</body>
+</html>

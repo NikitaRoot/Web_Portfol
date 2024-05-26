@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // функция добавления строк в таблицу
+        function add() {
+            var nodet = document.createElement('tr'); //создать новый элемент Строка
+            
+            var node = document.createElement('td'); //создать новый эелемент Ячейка
+            var node1 = document.createElement('td');
+            var node2 = document.createElement('td');
+            var node3 = document.createElement('td');
+
+            node.innerHTML = "<input type='text' name='1'>"; //в ячейке хранится текстовое поле 
+            node1.innerHTML = "<input type='text' name='2'>";
+            node2.innerHTML = "<input type='text' name='3'>";
+            node3.innerHTML = "<input type='text' name='4'>";
+
+            document.getElementById('tabl').appendChild(nodet); //находим эелемент Таблица по идонтефикатору и добавляем эелемент Строка в иерархическую структуру таблицы 
+
+            nodet.appendChild(node); // добавляем в эелемент Строка 4 новых элемента Ячейка 
+            nodet.appendChild(node1);
+            nodet.appendChild(node2);
+            nodet.appendChild(node3);
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="Добавить строки" onclick="add()"><br>
+    <table id="tabl" border="1" align="center" width='50%' >
+        <tr align="center">
+            <th>Фамилия:</th>
+            <th>Имя:</th>
+            <th>Отчество:</th>
+            <th>Дата рождения:</th>
+        </tr>
+    </table>
+
+</body>
+</html>
